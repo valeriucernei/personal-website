@@ -1,10 +1,10 @@
 import React from 'react'
 import { Layout } from 'ui/organisms/Layout/Layout'
 
-export const AboutPage = (): React.ReactElement => {
+export const BlogPage = (): React.ReactElement => {
   return (
     <Layout>
-      <div>This is the about page</div>
+      <div>This is the blog page</div>
     </Layout>
   )
 }
