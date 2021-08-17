@@ -1,11 +1,23 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import './styles/index.scss'
 import reportWebVitals from './reportWebVitals'
+import { AboutPage } from 'pages/AboutPage/AboutPage'
+import { ContactPage } from 'pages/ContactPage/ContactPage'
 
-ReactDOM.render(<div>lala</div>, document.getElementById('root'))
+ReactDOM.render(
+    <BrowserRouter>
+        <Switch>
+            <Route path="/about" component={AboutPage} />
+            <Route path="/contact" component={ContactPage} />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+            <Route path="/" exact={true}>
+                <Redirect to="/about" exact={true} />
+            </Route>
+        </Switch>
+    </BrowserRouter>,
+    document.getElementById('root')
+)
+
 reportWebVitals()
